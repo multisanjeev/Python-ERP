@@ -1,0 +1,80 @@
+{% load static %}
+<div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
+    <div class="menu_section">
+    <h3>General</h3>
+    <ul class="nav side-menu">
+        <li><a><i class="fa fa-users"></i> Admin <span class="fa fa-chevron-down"></span></a>
+            <ul class="nav child_menu">
+                <li><a>Category Management<span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                        <li><a href="{% url 'datasheet:addCategory' %}">Add Category</a></li>
+                        <li><a href="{% url 'datasheet:categoryList' %}">Category List</a></li>
+                        <li><a href="{% url 'datasheet:import_category' %}">Bulk import Category</a></li>
+                    </ul>
+                </li>
+                <li><a>Product<span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                        <li><a href="{% url 'datasheet:addProduct' %}">Add Product</a></li>
+                        <li><a href="{% url 'datasheet:productList' %}">Product List</a></li>
+                        <li><a href="{% url 'datasheet:import_product' %}">Import Products</a></li>
+                    </ul>
+                </li>
+                <li><a>Stock<span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                        <li><a href="{% url 'datasheet:addStock' %}">Add Stock</a></li>
+                        <li><a href="{% url 'datasheet:stocklist' %}">View Stock</a></li>
+                        <li><a href="#level2_2">Import Stock</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <li><a><i class="fa fa-user-plus"></i> Employee Management <span class="fa fa-chevron-down"></span></a>
+            <ul class="nav child_menu">
+                <li><a href="{% url 'control:employeeList' %}">Employee List</a></li>
+                <li><a href="{% url 'control:addEmployee' %}">Add Employee</a></li>
+                <li><a href="{% url 'control:importEmployees' %}">Bulk Import Employee</a></li>
+                <li><a href="#">Reports</a></li>
+                <li><a>Manage Date<span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                        <li><a href="#level2_1">Data Import</a></li>
+                        <li><a href="#level2_2">Bulk Update</a></li>
+                        <li><a href="#level2_2">Employee Data Export</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <li><a><i class="fa fa-plus-circle"></i> More <span class="fa fa-chevron-down"></span></a>
+            <ul class="nav child_menu">
+                <li><a>Manage Assets<span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                        <li><a href="{% url 'datasheet:addAssests' %}">Assign</a></li>
+                        <li><a href="{% url 'datasheet:assetsList' %}">Issue Assets List</a>
+                        </li>
+                    </ul>
+                </li>
+                <li><a href="{% url 'datasheet:dashboard' %}">Dashboard</a></li>
+                <li><a>Reports<span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                        <li><a href="{% url 'datasheet:employeeReport' %}">Assets Report Employee wise</a></li>
+                        <li><a href="{% url 'datasheet:productDropDown' %}">Product Report</a></li>
+                    </ul>
+                <li><a href="#">Preferences</a></li>
+                </li>
+            </ul>
+        </li>
+        <li><a><i class="fa fa-cogs"></i> Maintenance <span class="fa fa-chevron-down"></span></a>
+            <ul class="nav child_menu">
+                <li><a>Purge Records<span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                    <li><a href="#level2_1">Employee Records</a>
+                    </li>
+                    <li><a href="#level2_2">Candidate Records</a>
+                    </li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+    </ul>
+    </div>
+
+</div>

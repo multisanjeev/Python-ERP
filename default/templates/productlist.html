@@ -1,0 +1,47 @@
+{% extends 'default.html' %}
+{% load static %}
+{% block title %} Product List {% endblock %}
+{% block content %}
+<div class="right_col" role="main">
+    <div class="">
+        <div class="clearfix"></div>
+        <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12">
+            <div class="x_panel">
+                <div class="x_content">
+                {% if messages %}
+                    {% include 'message.html' %}
+                {% endif %}
+                <p class="text-muted font-13 m-b-30">Product List</p>
+                <div><a href="{% url 'datasheet:addProduct' %}" class="btn btn-default"><i class="fa fa-plus-circle">Add</i></a></li></div>
+                <table id="datatable-responsive" class="table table-striped table-bordered dt-responsive nowrap" cellspacing="0" width="100%">
+                    <thead>
+                    <tr>
+                        <th>Title</th>
+                        <th>Description</th>
+                        <th>Category</th>
+                        <th>Specification</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% if productList %}
+                        {% for product in productList %}
+                            <tr>
+                                <td>{{ product.title }}</td>
+                                <td>{{ product.description }}</td>
+                                <td>{{ product.category}}</td>
+                                <td>{{ product.specification}}</td>
+                            </tr>
+                        {% endfor %}
+                    {% endif %}
+                    </tbody>
+                </table>
+                
+                
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

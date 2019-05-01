@@ -1,0 +1,6 @@
+<option value="">------</option>
+{% if data %}
+    {% for product in data %}
+        <option value="{{ product.id }}">{{ product.title}}</option>
+    {% endfor %}
+{% endif %}

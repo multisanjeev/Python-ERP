@@ -1,0 +1,41 @@
+{% extends 'default.html' %}
+{% load static %}
+{% block title %} Employee Assets Report {% endblock %}
+{% block content %}
+<!-- page content -->
+<div class="right_col" role="main">
+<div class="">
+    <div class="clearfix"></div>
+        <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="x_panel">
+                    <div class="x_title">
+                        <h2>Employee Assets Report <small></small></h2>
+                        <div class="clearfix"></div>
+                    </div>
+                    <div class="x_content">
+                        <table id="datatable-responsive" class="export table table-striped table-bordered dt-responsive nowrap" cellspacing="0" width="100%">
+                            <thead>
+                                <tr>
+                                    <th>Employee</th>
+                                    <th>Issues Qty</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% if lists %}
+                                    {% for order in lists %}
+                                        <tr>
+                                            <td><a href="/dashboard/report/employeebyid/{{order.employee_id}}">{{order.employee__full_name}}</a></td>
+                                            <td>{{order.num_qty}}</td>
+                                        </tr>
+                                    {% endfor %}
+                                {% endif %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

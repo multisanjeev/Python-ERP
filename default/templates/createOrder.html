@@ -1,0 +1,67 @@
+{% extends 'default.html' %}
+{% load static %}
+{% block title %} Assign assests {% endblock %}
+{% block content %}
+<!-- page content -->
+<div class="right_col" role="main">
+<div class="">
+    <div class="clearfix"></div>
+    <div class="row">
+    <div class="col-md-12 col-sm-12 col-xs-12">
+        <div class="x_panel">
+        <div class="x_title">
+            <h2>Assign assests <small></small></h2>
+            <div class="clearfix"></div>
+        </div>
+        <div class="x_content">
+            <br />
+            <form action="{% url 'datasheet:addAssests' %}" method="POST" id="demo-form2" 
+            class="form-horizontal form-label-left" data-parsley-validate>
+                {% csrf_token %}
+                {{ form.errors }} {{ form.non_field_errors }}
+            <div class="form-group">
+                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">{{ form.employee.label }} <span class="required">*</span>
+                </label>
+                <div class="col-md-6 col-sm-6 col-xs-12">{{ form.employee }}</div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">{{ form.category.label }} <span class="required">*</span>
+                </label>
+                <div class="col-md-6 col-sm-6 col-xs-12">{{ form.category }}</div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">{{ form.product.label }} <span class="required">*</span>
+                </label>
+                <div class="col-md-6 col-sm-6 col-xs-12">{{ form.product }}</div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">{{ form.current_stock.label }} <span class="required">*</span>
+                </label>
+                <div class="col-md-6 col-sm-6 col-xs-12">{{ form.current_stock }}</div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">{{ form.qty.label }} <span class="required">*</span>
+                </label>
+                <div class="col-md-6 col-sm-6 col-xs-12">{{ form.qty }}</div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">{{ form.remark.label }}
+                </label>
+                <div class="col-md-6 col-sm-6 col-xs-12">{{ form.remark }}</div>
+            </div>
+            <div class="ln_solid"></div>
+            <div class="form-group">
+                <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
+                <button class="btn btn-primary" type="button">Cancel</button>
+                <button class="btn btn-primary" type="reset">Reset</button>
+                <button type="submit" class="btn btn-success">Submit</button>
+                </div>
+            </div>
+            </form>
+        </div>
+        </div>
+    </div>
+    </div>
+    </div>
+</div>
+{% endblock %}

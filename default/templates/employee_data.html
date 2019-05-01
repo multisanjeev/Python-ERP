@@ -1,0 +1,51 @@
+{% extends 'default.html' %}
+{% load static %}
+{% block title %} Employee Assets Report {% endblock %}
+{% block content %}
+<!-- page content -->
+<div class="right_col" role="main">
+<div class="">
+    <div class="clearfix"></div>
+        <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="x_panel">
+                    <div class="x_title">
+                        <h2><span class="btn btn-default"><a href="{% url 'datasheet:employeeReport' %}">Back</a></span>&nbsp;&nbsp;Employee Assets Report <small></small></h2>
+                        <div class="clearfix"></div>
+                    </div>
+                    <div class="x_content">
+                        <table id="datatable-responsive" class="export table table-striped table-bordered dt-responsive nowrap" cellspacing="0" width="100%">
+                            <thead>
+                                <tr>
+                                    <th>Employee</th>
+                                    <th>Category</th>
+                                    <th>product</th>
+                                    <th>Qty</th>
+                                    <th>Remark</th>
+                                    <th>Created At</th>
+                                    <th>Modified At</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% if assetsList %}
+                                    {% for asset in assetsList %}
+                                        <tr>
+                                            <td>{{ asset.employee }}</td>
+                                            <td>{{ asset.category }}</td>
+                                            <td>{{ asset.product}}</td>
+                                            <td>{{ asset.qty}}</td>
+                                            <td>{{ asset.remark }}</td>
+                                            <td>{{ asset.created_at}}</td>
+                                            <td>{{ asset.modified_at}}</td>
+                                        </tr>
+                                    {% endfor %}
+                                {% endif %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

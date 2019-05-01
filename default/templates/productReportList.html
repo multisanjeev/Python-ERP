@@ -1,0 +1,13 @@
+{% if stockList %}
+    {% for stock in stockList %}
+        <tr>
+            <td>{{ asset.employee }}</td>
+            <td>{{ asset.category }}</td>
+            <td>{{ asset.product}}</td>
+            <td>{{ asset.qty}}</td>
+            <td>{{ asset.remark }}</td>
+            <td>{{ asset.created_at}}</td>
+            <td>{{ asset.modified_at}}</td>
+        </tr>
+    {% endfor %}
+{% endif %}

@@ -1,0 +1,6 @@
+{% block content %}
+<form action="{% url 'control:pdfFile' %}" method="POST">
+    {% csrf_token %}
+    <button class="btn btn-default pull-right" name="pdf" type="submit">Generate PDF</button>
+</form>
+{% endblock %}
