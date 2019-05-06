@@ -18,6 +18,11 @@ import json
 
 def login(request):
     loginForm = LoginForm()
+    val = [
+            {'name': 'zed', 'age': 19},
+            {'name': 'amy', 'age': 22},
+            {'name': 'joe', 'age': 31},
+            ]
     if request.method == "POST":
         loginFormData = LoginForm(request.POST)
         if loginFormData.is_valid():
@@ -30,7 +35,7 @@ def login(request):
                 return redirect('/dashboard')
             except Employee.DoesNotExist:
                 messages.error(request, login_error)
-    return render(request, "login.html", {'form': loginForm})
+    return render(request, "login.html", {'form': loginForm, 'value': val})
 
 def register(request):
     if request.method == "POST":
