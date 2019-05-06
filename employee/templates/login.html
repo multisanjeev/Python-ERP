@@ -54,6 +54,9 @@
             </div>
         </div>
     </div>
+    {% with a="ageeya is  software company" %}
+        {{ a|upper }}
+    {% endwith %}
 </div>
 
 {{ value|dictsort:"name" }}
