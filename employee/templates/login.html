@@ -55,4 +55,35 @@
         </div>
     </div>
 </div>
+
+{{ value|dictsort:"name" }}
+
+{{ value|first }}
+{{ 30.26734|floatformat:3 }}
+
+{{ 123456789|get_digit:"2" }}
+{{ 12345|make_list }}
+
+{{ "what are is do"|slugify }}
+
+{{ "<b>Joel</b> <button>is</button> a <span>slug</span>"|striptags }}
+
+{{ "Joel is a slug"|truncatechars:7 }}
+
+{{ "Joel is a slug"|truncatewords:2 }}
+
+{{ "Joel is a slug"|wordcount }}
+
+{{ "Joel is a slug"|wordwrap:5 }}
+
+{% with name="world's" %}
+    {{ name|capfirst|addslashes }}
+{% endwith %}
+
+{% spaceless %}
+    <p>
+        <a href="foo/">Foo</a>
+    </p>
+{% endspaceless %}
+
 {% endblock %}
