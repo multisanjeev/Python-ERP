@@ -10,7 +10,7 @@ Click==7.0
 colorama==0.4.0
 confusable-homoglyphs==3.2.0
 dj-database-url==0.5.0
-Django==2.1.4
+Django==2.2.13
 django-classy-tags==0.8.0
 django-cms==3.5.3
 django-contact-us==0.4.1
