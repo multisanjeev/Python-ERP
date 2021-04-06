@@ -23,7 +23,7 @@ django-mptt==0.9.1
 django-parsley==0.7
 django-plugins==0.3.0
 django-polymorphic==2.0.3
-django-registration==3.0
+django-registration==3.1.2
 django-sekizai==0.10.0
 django-tables2==2.0.3
 django-taggit==0.23.0
